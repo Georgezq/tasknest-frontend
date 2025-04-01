@@ -1,5 +1,5 @@
 import { UserRepository } from '@/app/core/repositories/user.repository';
-import {  Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { UserService } from '../services/users/user.service';
 import { User} from '@/app/core/models/user.model';
 import { Observable } from 'rxjs';
@@ -15,6 +15,14 @@ export class UserRepositoryImpl implements UserRepository{
 
     getAllUsers(): Observable<User[]> {
      return this.userService.getUsers();   
+    }
+
+    thisEmailExists(email: string): Observable<boolean> {
+        return this.userService.thisEmailExists(email);
+    }
+
+    thisUsernameExists(username: string): Observable<boolean> {
+        return this.userService.thisUsernameExists(username);
     }
 
     getUserById(id: number): Observable<User> {

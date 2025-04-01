@@ -3,6 +3,8 @@ import { Observable } from "rxjs";
 import { User } from "../models/user.model";
 
 export abstract class UserRepository {
+    abstract thisEmailExists(email: string): Observable<boolean>;
+    abstract thisUsernameExists(username: string): Observable<boolean>;
     abstract getUserById(id: number): Observable<User>;
     abstract getAllUsers(): Observable<User[]>;
     abstract createUser(user: User): Observable<User>;

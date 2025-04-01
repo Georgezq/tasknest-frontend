@@ -15,6 +15,14 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  thisEmailExists(email: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/exists/email/${email}`);
+  }
+
+  thisUsernameExists(username: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/exists/username/${username}`);
+  }
+
   getUsers(): Observable<User[]> {
     return this.http.get<UserDTO[]>(this.apiUrl).pipe(map((apiUsers) => apiUsers.map(UserMapper.fromDomaininToApi)));
   }
