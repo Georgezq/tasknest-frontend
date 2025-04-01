@@ -1,59 +1,42 @@
-# TasknestFrontend
+# 📝 TaskNest Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+TaskNest Frontend es una aplicación web diseñada para la **gestión de proyectos y tareas**. Este proyecto utiliza **Angular** como framework principal y está optimizado para renderizado del lado del servidor (SSR) con Express. La aplicación incluye funcionalidades como autenticación, gestión de usuarios, y una interfaz moderna basada en PrimeNG.
 
-## Development server
+## 🚀 Características principales
 
-To start a local development server, run:
+- **Gestión de usuarios**: Crear, actualizar, eliminar y listar usuarios.
+- **Autenticación**: Módulo de inicio de sesión con formularios reactivos.
+- **Renderizado del lado del servidor (SSR)**: Mejora el rendimiento y la optimización SEO.
+- **Interfaz moderna**: Uso de PrimeNG y PrimeFlex para componentes y estilos.
+- **Arquitectura modular**: Separación de responsabilidades en módulos como `auth` y `users`.
+- **Pruebas unitarias**: Configuración de pruebas con Karma y Jasmine.
 
-```bash
-ng serve
-```
+## 📂 Estructura del proyecto
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+src/ ├── app/ │ ├── core/ # Modelos, repositorios y mapeadores │ ├── infraestructure/ # Servicios y DTOs │ ├── modules/ # Módulos funcionales (auth, users, etc.) │ ├── app.component.* # Componente raíz │ ├── app.config.* # Configuración de la aplicación │ ├── app.routes.ts # Rutas principales ├── main.ts # Punto de entrada del cliente ├── main.server.ts # Punto de entrada del servidor ├── server.ts # Configuración del servidor Express └── styles.css # Estilos globales
 
-## Code scaffolding
+## 🛠️ Tecnologías utilizadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular**: Framework principal para la construcción de la aplicación.
+- **Express**: Servidor para renderizado del lado del servidor (SSR).
+- **PrimeNG**: Biblioteca de componentes UI.
+- **PrimeFlex**: Utilidades CSS para diseño responsivo.
+- **RxJS**: Manejo de programación reactiva.
+- **TypeScript**: Lenguaje principal para el desarrollo.
 
-```bash
-ng generate component component-name
-```
+## 📦 Scripts disponibles
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+En el archivo `package.json`, puedes encontrar los siguientes scripts útiles:
 
-```bash
-ng generate --help
-```
+- `npm start`: Inicia la aplicación en modo desarrollo.
+- `npm run build`: Construye la aplicación para producción.
+- `npm run test`: Ejecuta las pruebas unitarias.
+- `npm run serve:ssr`: Inicia el servidor con renderizado del lado del servidor.
 
-## Building
+🧪 Pruebas
+Las pruebas unitarias están configuradas con Karma y Jasmine. Para ejecutarlas, utiliza:
 
-To build the project run:
+📬 Contribuciones
+¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o envía un pull request.
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+✨ TaskNest Frontend: Simplificando la gestión de proyectos y tareas. ✨ ```
