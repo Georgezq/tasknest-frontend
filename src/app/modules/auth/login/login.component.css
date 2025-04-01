@@ -1,0 +1,22 @@
+.card{
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h5{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--dark-text);
+}
+
+span{
+    color: var(--ligh-text);
+    font-size: 14px;
+    text-align: center;   
+}
