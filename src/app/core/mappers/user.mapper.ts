@@ -4,18 +4,18 @@ import { User } from '@/app/core/models/user.model';
 
 export class UserMapper {
     static toDomain(userDTO: UserDTO): User {
-        return {
-            id: userDTO.id,
-            name: userDTO.name,
-            email: userDTO.email,
-            password: userDTO.password,
-            role: userDTO.role,
-            createdAt: new Date(userDTO.createdAt),
-            updatedAt: new Date(userDTO.updatedAt)
-        }
+        return new User (
+            userDTO.id,
+            userDTO.name,
+            userDTO.email,
+            userDTO.password,
+            userDTO.role,
+            new Date(userDTO.createdAt),
+            new Date(userDTO.updatedAt)
+        )
     }
 
-    static fromDomaininToApi(domainUser: User): UserDTO {
+    static toDTO(domainUser: User): UserDTO {
         return {
             id: domainUser.id,
             name: domainUser.name,

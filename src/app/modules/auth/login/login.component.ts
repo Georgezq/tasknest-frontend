@@ -1,4 +1,4 @@
-import { UserRepositoryImpl } from '@/app/infraestructure/repositories/user.repository.impl';
+import { UserRepository } from '@/app/core/repositories/user.repository';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   emailExists: boolean = false;
   textButton: string = 'Continuar';
 
-  constructor(private fb: FormBuilder, private userRepository: UserRepositoryImpl) {
+  constructor(private fb: FormBuilder, private userRepository: UserRepository) {
     if (this.emailExists) 
           this.textButton = 'Iniciar Sesión';
     else  this.textButton = 'Continuar';

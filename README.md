@@ -35,4 +35,4 @@ Las pruebas unitarias están configuradas con Karma y Jasmine. Para ejecutarlas,
 📬 Contribuciones
 ¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor abre un issue o envía un pull request.
 
-✨ TaskNest Frontend: Simplificando la gestión de proyectos y tareas. ✨ ```
+✨ TaskNest Frontend: Simplificando la gestión de proyectos y tareas. ✨

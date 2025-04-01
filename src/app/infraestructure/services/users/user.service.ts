@@ -15,6 +15,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  getUsers(): Observable<User[]> {
+    return this.http.get<UserDTO[]>(this.apiUrl).pipe(map((apiUsers) => apiUsers.map(UserMapper.toDomain)));
+  }
+
   thisEmailExists(email: string): Observable<boolean> {
     return this.http.get<boolean>(`${this.apiUrl}/exists/email/${email}`);
   }
@@ -23,20 +27,16 @@ export class UserService {
     return this.http.get<boolean>(`${this.apiUrl}/exists/username/${username}`);
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<UserDTO[]>(this.apiUrl).pipe(map((apiUsers) => apiUsers.map(UserMapper.fromDomaininToApi)));
-  }
-
   getUserById(id: number): Observable<User> {
-    return this.http.get<UserDTO>(`${this.apiUrl}/${id}`).pipe(map(UserMapper.fromDomaininToApi));
+    return this.http.get<UserDTO>(`${this.apiUrl}/${id}`).pipe(map(UserMapper.toDomain));
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<UserDTO>(this.apiUrl, UserMapper.toDomain(user)).pipe(map(UserMapper.fromDomaininToApi));
+    return this.http.post<UserDTO>(this.apiUrl, UserMapper.toDTO(user)).pipe(map(UserMapper.toDomain));
   }
 
   updateUser(user: User): Observable<User> {
-    return this.http.put<UserDTO>(`${this.apiUrl}/${user.id}`, UserMapper.toDomain(user)).pipe(map(UserMapper.fromDomaininToApi));
+    return this.http.put<UserDTO>(`${this.apiUrl}/${user.id}`, UserMapper.toDTO(user)).pipe(map(UserMapper.toDomain));
   }
 
   deleteUser(id: number): Observable<void> {
