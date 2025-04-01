@@ -11,10 +11,6 @@ TaskNest Frontend es una aplicación web diseñada para la **gestión de proyect
 - **Arquitectura modular**: Separación de responsabilidades en módulos como `auth` y `users`.
 - **Pruebas unitarias**: Configuración de pruebas con Karma y Jasmine.
 
-## 📂 Estructura del proyecto
-
-src/ ├── app/ │ ├── core/ # Modelos, repositorios y mapeadores │ ├── infraestructure/ # Servicios y DTOs │ ├── modules/ # Módulos funcionales (auth, users, etc.) │ ├── app.component.* # Componente raíz │ ├── app.config.* # Configuración de la aplicación │ ├── app.routes.ts # Rutas principales ├── main.ts # Punto de entrada del cliente ├── main.server.ts # Punto de entrada del servidor ├── server.ts # Configuración del servidor Express └── styles.css # Estilos globales
-
 ## 🛠️ Tecnologías utilizadas
 
 - **Angular**: Framework principal para la construcción de la aplicación.
