@@ -6,7 +6,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   selector: 'app-login',
   standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
 
@@ -15,10 +14,7 @@ export class LoginComponent implements OnInit {
   textButton: string = 'Continuar';
 
   constructor(private fb: FormBuilder, private userRepository: UserRepository) {
-    if (this.emailExists) 
-          this.textButton = 'Iniciar Sesión';
-    else  this.textButton = 'Continuar';
-    
+       
   }
   
 
@@ -42,4 +38,8 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+ 
+
+
 }

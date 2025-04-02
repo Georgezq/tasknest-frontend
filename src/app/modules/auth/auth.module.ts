@@ -13,10 +13,11 @@ import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { RouterLink } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
+import { RecoverAccountComponent } from './recover-account/recover-account.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
-  exports: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, RecoverAccountComponent],
+  exports: [LoginComponent, RegisterComponent, RecoverAccountComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

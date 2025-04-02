@@ -34,11 +34,35 @@
 }
 
 .card-register{
-        margin: 0 auto;
-        width: 400px;
-        height: auto;
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);    
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);    
+}
+
+h5{
+    text-align: center;
+    font-size: 16px;
+    color: var(--dark-text);
+}
+
+span{
+    color: var(--ligh-text);
+    font-size: 14px;
+    text-align: center;   
+    font-weight: 600;
+}
+
+.light-text{
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: contrast(.9);
 }

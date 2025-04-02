@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   selector: 'app-register',
   standalone: false,
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit{
 

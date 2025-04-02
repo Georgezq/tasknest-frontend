@@ -21,23 +21,21 @@
         />
         }
 
-        <p-button
-          [label]="textButton"
-          [raised]="true"
-          class="mx-auto my-2 text-white"
-        />
+        <button class="py-2 border-round-sm border-0 border-none bg-primary" (click)="verifyEmail()">
+          {{textButton}}
+        </button>
 
         <span>O continúa con:</span>
 
         <button
-          class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round border-400 p-button-outlined w-full p-2"
+          class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round border-400  w-full p-2 bg-white"
         >
           <!-- <img src="/public/svg/google.svg" alt="google logo" /> -->
           <h5>Google</h5>
         </button>
 
         <button
-          class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round border-400 p-button-outlined w-full p-2"
+          class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round border-400 bg-white w-full p-2"
         >
           <!-- <img src="/public/svg/google.svg" alt="github logo" /> -->
           <h5>Github</h5>
@@ -47,7 +45,7 @@
 
       <section class="mt-6">
         <div class="flex flex-row gap-2 align-items-center justify-content-center">
-            <a [routerLink]="['/recovered']"  class="link">¿No puedes iniciar sesión?</a>
+            <a [routerLink]="['/resetpassword']"  class="link">¿No puedes iniciar sesión?</a>
             <span>•</span>
             <a [routerLink]="['/register']" class="link">Crear una cuenta</a>
         </div>

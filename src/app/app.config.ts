@@ -8,7 +8,7 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 // import Aura from '@primeng/themes/aura';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { UserRepository } from './core/repositories/user.repository';
 import { UserRepositoryImpl } from './infraestructure/repositories/user.repository.impl';
 import { MyPreset } from './myPreset';
@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     providePrimeNG({
