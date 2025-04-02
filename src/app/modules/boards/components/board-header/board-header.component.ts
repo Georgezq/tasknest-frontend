@@ -13,7 +13,6 @@ import { InputIconModule } from 'primeng/inputicon';
   selector: 'app-board-header',
   imports: [Menubar, BadgeModule, AvatarModule, InputTextModule, Ripple, CommonModule, IconFieldModule, InputIconModule],
   templateUrl: './board-header.component.html',
-  styleUrl: './board-header.component.css'
 })
 export class BoardHeaderComponent implements OnInit{
 

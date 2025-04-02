@@ -1,8 +1,10 @@
 <header>
     <div class="card" >
-        <p-menubar [model]="items" >
+        <p-menubar [model]="items" breakpoint="150px">
             <ng-template #start>
-               <span class="text-2xl font-italic font-bold">TaskNest</span>
+               <button class="border-none bg-transparent">
+                <span class="text-2xl font-italic font-bold">TaskNest</span>
+               </button>
             </ng-template>
             <ng-template #item let-item let-root="root">
                 <a pRipple class="flex items-center p-menubar-item-link">
