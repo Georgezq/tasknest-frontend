@@ -10,18 +10,24 @@ import { LoginComponent } from './login/login.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { DividerModule } from 'primeng/divider';
+import { RouterLink } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [LoginComponent],
-  exports: [LoginComponent],
+  declarations: [LoginComponent, RegisterComponent],
+  exports: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterLink,
     InputTextModule,
     PasswordModule,
-    ButtonModule
+    ButtonModule,
+    DividerModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
 })
 export class AuthModule { }

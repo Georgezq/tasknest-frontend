@@ -1,0 +1,56 @@
+<section class="h-screen w-full flex">
+    <div class="card-register h-8 m-auto h-auto w-24rem">
+      <div class="card-header mt-4">
+        <h5>Regístrate para continuar</h5>
+      </div>
+      <div class="card-body m-auto mt-4">
+        <form [formGroup]="formGroup" class="flex flex-column gap-3 w-full">
+          <input
+            type="text"
+            pInputText
+            formControlName="email"
+            placeholder="Introduce tu correo electrónico"
+          />
+  
+          <p-button
+            label="Registrarse"
+            [raised]="true"
+            class="mx-auto my-2 text-white"
+          />
+  
+          <span>O continúa con:</span>
+  
+          <button
+            class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round border-400 p-button-outlined w-full p-2"
+          >
+            <!-- <img src="/public/svg/google.svg" alt="google logo" /> -->
+            <h5>Google</h5>
+          </button>
+  
+          <button
+            class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round border-400 p-button-outlined w-full p-2"
+          >
+            <!-- <img src="/public/svg/google.svg" alt="github logo" /> -->
+            <h5>Github</h5>
+          </button>
+  
+        </form>
+  
+        <section class="mt-6">
+          <div class="flex flex-row gap-2 align-items-center justify-content-center">
+              <a [routerLink]="['/login']"  class="link">¿Ya tienes una cuenta en TaskNest? Iniciar sesión</a>
+          </div>
+        </section>
+  
+      </div>
+  
+      <p-divider />
+  
+      <div class="card-footer flex align-items-center justify-content-center">
+          <span>
+              Creado por Georgezq
+          </span>
+      </div>
+    </div>
+  </section>
+  

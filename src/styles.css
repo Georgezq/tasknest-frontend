@@ -7,7 +7,7 @@
 }
 
 :root{
-    --primary-color: #007bff;
+    --p-primary-color: #007bff;
     --secondary-color: #6c757d;
     --success-color: #28a745;
     --danger-color: #dc3545;
@@ -16,7 +16,29 @@
     --light-color: #f8f9fa;
     --dark-color: #343a40;
 
-    --dark-text: #172b4d;
+    /* colores de la pagina Trello */
 
+    --dark-text: #172b4d;
+    --link-color: #0c66e4;
     --ligh-text: rgb(94, 108, 132);
+}
+
+.link{
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 14px;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.card-register{
+        margin: 0 auto;
+        width: 400px;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);    
 }

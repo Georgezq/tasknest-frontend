@@ -7,8 +7,11 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import Aura from '@primeng/themes/aura';
+// import Aura from '@primeng/themes/aura';
 import { provideHttpClient } from '@angular/common/http';
+import { UserRepository } from './core/repositories/user.repository';
+import { UserRepositoryImpl } from './infraestructure/repositories/user.repository.impl';
+import { MyPreset } from './myPreset';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +21,10 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     providePrimeNG({
-      theme: { preset: Aura },
+    theme: { preset: MyPreset },
     }),
+
+    { provide: UserRepository, useClass: UserRepositoryImpl },
+
   ],
 };
