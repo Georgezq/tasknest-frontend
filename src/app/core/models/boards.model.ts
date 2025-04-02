@@ -1,4 +1,5 @@
 export class Board {
+    // un proyecto puede tener varios tableros, esto estara en el sidebar donde se listaran los proyectos del usuario y estos proyectos pueden desplegar distintos tableros
     constructor(
         private _id: number,
         private _proyectoId: number,
