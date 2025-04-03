@@ -8,9 +8,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    list-style: none;
 }
-
-
 
 :root{
     --p-primary-color: #007bff;
@@ -27,6 +26,17 @@
     --dark-text: #172b4d;
     --link-color: #0c66e4;
     --ligh-text: rgb(94, 108, 132);
+
+
+    //dynamic text
+
+    --dynamic-text: #44546F;
+
+    //dynamic icon
+
+    --dynamic-icon: #626F86;
+
+
 
 
 }
