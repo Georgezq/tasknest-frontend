@@ -32,6 +32,8 @@ span{
     font-weight: 600;
 }
 
+
+
 .light-text{
     color: var(--dark-text);
     font-weight: 600;
@@ -43,3 +45,16 @@ button:hover {
     filter: contrast(.9);
 }
 
+.p-progressspinner-circle{
+    animation: geek 1s ease-in-out infinite !important; 
+
+}
+
+@keyframes geek { 
+	0% { 
+		stroke: #ffffff; 
+	} 
+	100% { 
+		stroke: #ffffff; 
+	} 
+}

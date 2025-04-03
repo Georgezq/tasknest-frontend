@@ -14,6 +14,7 @@ import { DividerModule } from 'primeng/divider';
 import { RouterLink } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { RecoverAccountComponent } from './recover-account/recover-account.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, RecoverAccountComponent],
@@ -27,6 +28,7 @@ import { RecoverAccountComponent } from './recover-account/recover-account.compo
     PasswordModule,
     ButtonModule,
     DividerModule,
+    ProgressSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   

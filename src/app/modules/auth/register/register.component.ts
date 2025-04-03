@@ -10,12 +10,18 @@ export class RegisterComponent implements OnInit{
 
   formGroup: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder,) {
+       
+  }
+
 
   ngOnInit(): void {
       this.formGroup = this.fb.group({
         email: ['']
       })
+  }
+
+  registerAccount(){
   }
 
 }

@@ -20,7 +20,11 @@ export class UserService {
   }
 
   thisEmailExists(email: string): Observable<boolean> {
-    return this.http.get<boolean>(`${this.apiUrl}/exists/email/${email}`);
+    return this.http.get<{ exists: boolean }>(`${this.apiUrl}/exists`, {
+      params: { email }
+    }).pipe(
+      map(response => response.exists) // Extrae el valor 'exists' del objeto
+    );
   }
 
   thisUsernameExists(username: string): Observable<boolean> {

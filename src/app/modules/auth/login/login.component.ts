@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({});
   emailExists: boolean = false;
   textButton: string = 'Continuar';
-  users: any;
+  loading: boolean = false;
+  
   constructor(private fb: FormBuilder, private userRepository: UserRepository) {
        
   }
@@ -24,27 +25,28 @@ export class LoginComponent implements OnInit {
       password: ['']
     });
 
-    this.userRepository.getAllUsers().subscribe(data => {
-      this.users = data;
-      console.log(this.users);
+    // this.userRepository.getAllUsers().subscribe(data => {
+    //   this.users = data;
+    //   console.log(this.users);
       
-    })
+    // })
   
   }
 
   verifyEmail() {
+    this.loading = false;
     const email = this.formGroup.get('email')?.value;
-    this.userRepository.thisEmailExists(email).subscribe((exists) => {
-      this.emailExists = exists;
-      if (this.emailExists) {
+      this.loading = true;
+      this.userRepository.thisEmailExists(email).subscribe((exists) => {
+        setTimeout(() => {
+          this.emailExists = exists;
+          this.loading = false;
+          if (this.emailExists) 
         this.textButton = 'Iniciar Sesión';
-      } else {
+          else 
         this.textButton = 'Continuar';
-      }
-    });
+        }, 1000);
+      });   
   }
-
- 
-
 
 }

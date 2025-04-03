@@ -6,9 +6,10 @@
     <div class="card-body m-auto mt-4">
       <form [formGroup]="formGroup" class="flex flex-column gap-3 w-full">
         <input
-          type="text"
+          type="email"
           pInputText
           formControlName="email"
+
           placeholder="Introduce tu correo electrónico"
         />
 
@@ -22,8 +23,13 @@
         }
 
         <button class="py-2 border-round-sm border-0 border-none bg-primary" (click)="verifyEmail()">
+         @if (!loading) {
           {{textButton}}
+         } @else {
+          <p-progress-spinner strokeWidth="4" styleClass="geek-spinner"  fill="transparent" [style]="{ width: '25px', height: '25px', color: 'white' }" />
+         }
         </button>
+
 
         <span>O continúa con:</span>
 
