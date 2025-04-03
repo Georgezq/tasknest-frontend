@@ -11,7 +11,7 @@ import { UserMapper } from '@/app/core/mappers/user.mapper';
 })
 export class UserService {
 
-  private apiUrl = 'https://api.example.com/users';
+  private apiUrl = 'http://localhost:5195/api/users';
 
   constructor(private http: HttpClient) { }
 

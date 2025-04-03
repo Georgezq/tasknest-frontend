@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({});
   emailExists: boolean = false;
   textButton: string = 'Continuar';
-
+  users: any;
   constructor(private fb: FormBuilder, private userRepository: UserRepository) {
        
   }
@@ -24,6 +24,11 @@ export class LoginComponent implements OnInit {
       password: ['']
     });
 
+    this.userRepository.getAllUsers().subscribe(data => {
+      this.users = data;
+      console.log(this.users);
+      
+    })
   
   }
 
