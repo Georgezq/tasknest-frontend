@@ -11,9 +11,16 @@
             formControlName="email"
             placeholder="Introduce tu correo electrónico"
           />
+
+          <p-toast />
   
-          <button class="py-2 border-round-sm border-0 border-none bg-primary ">
-            Registrarse
+          <button class="py-2 border-round-sm border-0 border-none bg-primary " (click)="verifyEmail()">
+            @if (!loading) {
+              Registrarse  
+            } @else {
+              <p-progress-spinner strokeWidth="4" styleClass="geek-spinner"  fill="transparent" [style]="{ width: '25px', height: '25px', color: 'white' }" />
+            }
+            
           </button>
   
           <span>O continúa con:</span>

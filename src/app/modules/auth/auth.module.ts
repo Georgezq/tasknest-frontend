@@ -15,6 +15,8 @@ import { RouterLink } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { RecoverAccountComponent } from './recover-account/recover-account.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ToastModule } from 'primeng/toast';
+import { Ripple } from 'primeng/ripple';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, RecoverAccountComponent],
@@ -28,9 +30,10 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     PasswordModule,
     ButtonModule,
     DividerModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ToastModule,
+    Ripple,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  
 })
 export class AuthModule { }
