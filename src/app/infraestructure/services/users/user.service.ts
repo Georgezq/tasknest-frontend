@@ -27,6 +27,11 @@ export class UserService {
     );
   }
 
+  sendEmailVerification(email: string): Observable<void> {
+    return this.http.get<void>(`${this.apiUrl}/email`, { params: {email} });  
+  }
+  
+
   thisUsernameExists(username: string): Observable<boolean> {
     return this.http.get<boolean>(`${this.apiUrl}/exists/username/${username}`);
   }
