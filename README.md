@@ -4,7 +4,7 @@ TaskNest Frontend es una aplicación web innovadora diseñada para **simplificar
 
 ## 🌟 Idea base
 
-La idea principal de TaskNest Frontend es proporcionar una plataforma centralizada donde los equipos puedan gestionar proyectos, asignar tareas, realizar seguimientos de progreso y colaborar en tiempo real. Con una interfaz intuitiva y funcionalidades avanzadas, TaskNest busca ser la solución definitiva para la organización de proyectos, adaptándose a las necesidades de equipos pequeños y grandes.
+La idea principal de TaskNest Frontend es proporcionar una plataforma centralizada donde los equipos puedan gestionar proyectos, asignar tareas, realizar seguimientos de progreso y colaborar en tiempo real. Con una interfaz intuitiva y funcionalidades avanzadas, TaskNest busca ser la solución definitiva para la organización de proyectos, adaptándose a las necesidades de equipos pequeños y grandes. Además, utiliza la **arquitectura hexagonal** para garantizar un diseño modular y flexible.
 
 ## 🚀 Características principales
 
@@ -24,29 +24,6 @@ La idea principal de TaskNest Frontend es proporcionar una plataforma centraliza
 - **PrimeFlex**: Utilidades CSS para diseño responsivo.
 - **RxJS**: Manejo de programación reactiva para flujos de datos.
 - **TypeScript**: Lenguaje principal para el desarrollo, asegurando tipado estático y mantenibilidad.
+- **ASP.NET**: Backend robusto para la gestión de datos y lógica de negocio.
+- **PostgreSQL**: Base de datos relacional utilizada para almacenar datos, desplegada mediante **Docker** para facilitar la configuración y portabilidad.
 
-## 📦 Scripts disponibles
-
-En el archivo `package.json`, puedes encontrar los siguientes scripts útiles:
-
-- `npm start`: Inicia la aplicación en modo desarrollo.
-- `npm run build`: Construye la aplicación para producción.
-- `npm run test`: Ejecuta las pruebas unitarias.
-- `npm run serve:ssr`: Inicia el servidor con renderizado del lado del servidor.
-
-## 🤝 Cómo contribuir
-
-¡Las contribuciones son bienvenidas! Si deseas colaborar, sigue estos pasos:
-
-1. Haz un fork del repositorio.
-2. Crea una rama para tu funcionalidad o corrección (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -m "Agrega nueva funcionalidad"`).
-4. Envía un pull request y describe tus cambios.
-
-Para reportar problemas o sugerir mejoras, abre un issue en el repositorio.
-
-## 📧 Contacto
-
-Si tienes preguntas o necesitas soporte, no dudes en contactarnos a través de nuestro correo electrónico o en la sección de issues del repositorio.
-
-✨ **TaskNest Frontend: Simplificando la gestión de proyectos y tareas para equipos de todo el mundo.** ✨
