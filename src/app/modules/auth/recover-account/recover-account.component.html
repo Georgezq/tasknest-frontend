@@ -1,3 +1,4 @@
+<p-toast />
 <section class="h-screen w-full flex">
     <div class="card-register h-8 m-auto h-auto w-24rem">
       <div class="card-header my-5">
@@ -12,9 +13,6 @@
             formControlName="email"
             placeholder="Introducir correo "
           />
-
-          <p-toast />
-
           
           <p-message
             *ngIf="formGroup.get('email')?.errors?.['required'] && formGroup.get('email')?.touched"
@@ -22,7 +20,7 @@
             text="El correo electrónico es obligatorio" ></p-message>
 
   
-          <button class="py-2 border-round-sm border-0 border-none bg-primary " (click)="validIfEmailExists()">
+          <button class="border-round-sm border-0 border-none bg-primary " (click)="validIfEmailExists()">
             @if (!loading) {
               Enviar enlace de recuperación
              } @else {

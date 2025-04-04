@@ -1,3 +1,4 @@
+<p-toast />
 <section class="h-screen w-full flex">
     <div class="card-register h-8 m-auto h-auto w-24rem">
       <div class="card-header mt-4">
@@ -12,9 +13,8 @@
             placeholder="Introduce tu correo electrónico"
           />
 
-          <p-toast />
   
-          <button class="py-2 border-round-sm border-0 border-none bg-primary " (click)="verifyEmail()">
+          <button class="border-round-sm border-0 border-none bg-primary " (click)="verifyEmail()">
             @if (!loading) {
               Registrarse  
             } @else {

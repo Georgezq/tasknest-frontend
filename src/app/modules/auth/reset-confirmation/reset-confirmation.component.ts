@@ -19,6 +19,7 @@ import { ToastModule } from 'primeng/toast';
     RouterModule,
   ],
   template: `
+  <p-toast />
     <section class="h-screen w-full flex">
       <div class="card-register h-8 m-auto h-auto w-24rem">
         <div class="card-header mt-4">
@@ -26,13 +27,13 @@ import { ToastModule } from 'primeng/toast';
         </div>
         <div class="card-body m-auto mt-4 text-center flex flex-column align-items-center w-full"> 
           <img src="assets/sendEmail.webp" alt="email-verification" class="w-12rem h-12rem" />
-          <p-toast />
+          
           <span>Hemos enviado un enlace de verificación a:</span>
           <strong> {{email}} </strong>
 
           <div class="content-buttons flex flex-column mt-4 gap-3 w-full" >
           <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="py-2 border-round-sm border-0 border-none bg-primary">Abrir correo electrónico</a>
-          <button class="py-2 border-round-sm border-0 border-none bg-gray-100" >Reenviar enlace</button>
+          <button class="border-round-sm border-0 border-none bg-gray-100" >Reenviar enlace</button>
           </div>
         </div>
 

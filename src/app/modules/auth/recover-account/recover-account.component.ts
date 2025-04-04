@@ -46,7 +46,7 @@ export class RecoverAccountComponent implements OnInit {
             this.loading = false;
           }, 1000);
          
-          this.router.navigate(['confirmation']);
+          this.router.navigate(['/confirmation']);
          
         },
         error: () => {

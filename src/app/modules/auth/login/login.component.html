@@ -1,3 +1,4 @@
+<p-toast />
 <section class="h-screen w-full flex">
   <div class="card-register h-8 m-auto h-auto w-24rem">
     <div class="card-header mt-4">
@@ -8,9 +9,10 @@
         <input
           type="email"
           pInputText
+          aria-describedby="username-help"
           formControlName="email"
-
           placeholder="Introduce tu correo electrónico"
+
         />
 
         @if (emailExists) {
@@ -18,13 +20,16 @@
           formControlName="password"
           [feedback]="false"
           [toggleMask]="true"
-
+          styleClass="w-full"
+          placeholder="Introduce tu contraseña"
+          [inputStyle]="{ width: '100%' }"
+          [toggleMaskIcon]="{ width: '100%' }"
         />
         }
 
-        <p-toast />
+     
 
-        <button class="py-2 border-round-sm border-0 border-none bg-primary" (click)="verifyEmail()">
+        <button class=" border-round-sm border-0 border-none bg-primary" (click)="buttonConfig()">
          @if (!loading) {
           {{textButton}}
          } @else {
@@ -39,14 +44,14 @@
         <button
           class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round w-full p-2 bg-white"
         >
-          <!-- <img src="/public/svg/google.svg" alt="google logo" /> -->
+          <img src="assets/google-logo.webp" class="w-2rem h-2rem" alt="google logo" />
           <h5>Google</h5>
         </button>
 
         <button
           class="flex flex-row gap-2 justify-content-center align-items-center border-1 border-round bg-white w-full p-2"
         >
-          <!-- <img src="/public/svg/google.svg" alt="github logo" /> -->
+          <img src="assets/github-logo.webp" class="w-2rem h-2rem" alt="github logo" />
           <h5>Github</h5>
         </button>
 

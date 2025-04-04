@@ -36,7 +36,12 @@ export class LoginComponent implements OnInit {
   
   }
 
-  verifyEmail() {
+  buttonConfig() {
+    if(this.textButton === 'Continuar') this.emailValid();
+    else this.login();    
+  }
+
+  emailValid() {
     this.loading = false;
     const email = this.formGroup.get('email')?.value;
     this.loading = true;
@@ -45,8 +50,11 @@ export class LoginComponent implements OnInit {
         setTimeout(() => {
           this.emailExists = exists;
           this.loading = false;
-          if (this.emailExists) this.textButton = 'Iniciar Sesión';
-          else this.textButton = 'Continuar';
+          if (this.emailExists) this.textButton = 'Iniciar Sesión';  
+          else {
+            this.textButton = 'Continuar';
+                this.messageService.showMesages('info', 'Correo no existente', 'Por favor registrese', 2000);
+          }
         }, 1000);
       },
       error: () => {       
@@ -55,5 +63,28 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+
+
+  login() {
+    const email = this.formGroup.get('email')?.value;
+    const password = this.formGroup.get('password')?.value;
+    this.loading = false;
+    this.loading = true;
+    this.userRepository.authenticate(email, password).subscribe({
+      next: () => {
+        setTimeout(() => {
+          // console.log(response);
+          this.loading = false;
+        }, 1000);
+      },
+      error: () => {        
+        this.loading = false;
+        this.messageService.showMesages('error', 'Ocurrió un error al iniciar sesión', '', 2000);
+      }
+    });
+  }
+
+
 
 }
