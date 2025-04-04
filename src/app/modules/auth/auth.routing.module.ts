@@ -7,5 +7,13 @@ export const auth_routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'resetpassword', component: RecoverAccountComponent },
+    { path: 'resetpassword', component: RecoverAccountComponent,
+        children: [
+           
+        ]
+     },
+     {
+        path: 'confirmation',
+        loadComponent: () => import('./reset-confirmation/reset-confirmation.component').then(m => m.ResetConfirmationComponent)
+    }
 ];

@@ -13,8 +13,7 @@ import { UserRepository } from '@/app/core/repositories/user.repository';
 export class RegisterComponent implements OnInit{
 
   formGroup: FormGroup = new FormGroup({});
-   emailExists: boolean = false;
-   loading: boolean = false;
+  loading: boolean = false;
    
    constructor(private fb: FormBuilder, private userRepository: UserRepository, private messageService: MessageAlertService) {
         
@@ -33,16 +32,13 @@ export class RegisterComponent implements OnInit{
     this.userRepository.thisEmailExists(email).subscribe({
       next: (exists) => {
         setTimeout(() => {
-          this.emailExists = exists;
-          if(this.emailExists)
+          if(exists)
             this.messageService.showMesages('info', 'Correo ya existente', 'Por favor inicie sesión', 2000);
           this.loading = false;
         }, 1000);
-        console.log(email);
         
         this.userRepository.sendEmailVerification(email).subscribe({
-          next: () => alert('Correo de verificación enviado'),
-          error: (err) => alert('Error al enviar el correo: ' + err.message)
+         
         });
       },
       error: () => {

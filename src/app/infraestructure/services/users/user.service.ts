@@ -23,7 +23,7 @@ export class UserService {
     return this.http.get<{ exists: boolean }>(`${this.apiUrl}/exists`, {
       params: { email }
     }).pipe(
-      map(response => response.exists) // Extrae el valor 'exists' del objeto
+      map(response => response.exists)
     );
   }
 

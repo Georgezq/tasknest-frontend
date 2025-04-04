@@ -12,10 +12,25 @@
             formControlName="email"
             placeholder="Introducir correo "
           />
+
+          <p-toast />
+
+          
+          <p-message
+            *ngIf="formGroup.get('email')?.errors?.['required'] && formGroup.get('email')?.touched"
+            severity="error"
+            text="El correo electrónico es obligatorio" ></p-message>
+
   
-          <button class="py-2 border-round-sm border-0 border-none bg-primary ">
-            Enviar enlace de recuperación
+          <button class="py-2 border-round-sm border-0 border-none bg-primary " (click)="validIfEmailExists()">
+            @if (!loading) {
+              Enviar enlace de recuperación
+             } @else {
+              <p-progress-spinner strokeWidth="4" styleClass="geek-spinner"  fill="transparent" [style]="{ width: '25px', height: '25px', color: 'white' }" />
+             }
           </button>
+
+          <span *ngIf=""></span>
   
         </form>
   

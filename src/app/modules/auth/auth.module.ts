@@ -17,6 +17,7 @@ import { RecoverAccountComponent } from './recover-account/recover-account.compo
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastModule } from 'primeng/toast';
 import { Ripple } from 'primeng/ripple';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, RecoverAccountComponent],
@@ -33,6 +34,7 @@ import { Ripple } from 'primeng/ripple';
     ProgressSpinnerModule,
     ToastModule,
     Ripple,
+    MessageModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
