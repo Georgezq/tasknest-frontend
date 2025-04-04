@@ -10,20 +10,20 @@ export class UserMapper {
             userDTO.email,
             userDTO.password,
             userDTO.role,
-            new Date(userDTO.createdAt),
-            new Date(userDTO.updatedAt)
+            userDTO.createdAt ? new Date(userDTO.createdAt) : undefined,
+            userDTO.updatedAt ? new Date(userDTO.updatedAt) : undefined
         )
     }
 
     static toDTO(domainUser: User): UserDTO {
         return {
             id: domainUser.id,
-            name: domainUser.name,
-            email: domainUser.email,
-            password: domainUser.password,
-            role: domainUser.role,
-            createdAt: domainUser.createdAt,
-            updatedAt: domainUser.updatedAt
+            name: domainUser.name ?? '',
+            email: domainUser.email ?? '',
+            password: domainUser.password ?? '',
+            role: domainUser.role ?? '',
+            createdAt: domainUser.createdAt ? new Date(domainUser.createdAt) : undefined,
+            updatedAt: domainUser.updatedAt ? new Date(domainUser.updatedAt) : undefined
         }
     }
 }

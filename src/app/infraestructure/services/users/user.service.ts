@@ -27,6 +27,20 @@ export class UserService {
     );
   }
 
+  authenticate(email: string, password: string): Observable<User> {
+    console.log(email, password);
+    
+    return this.http.post<UserDTO>(`${this.apiUrl}/authenticate`, {email, password }).pipe(
+      map(
+        response => {
+          console.log(response);
+          
+          return UserMapper.toDomain(response);
+        }
+        
+      ));
+  }
+
   sendEmailVerification(email: string): Observable<void> {
     return this.http.get<void>(`${this.apiUrl}/email`, { params: {email} });  
   }

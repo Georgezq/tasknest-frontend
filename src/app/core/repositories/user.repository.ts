@@ -5,6 +5,7 @@ import { User } from "../models/user.model";
 export abstract class UserRepository {
     abstract thisEmailExists(email: string): Observable<boolean>;
     abstract thisUsernameExists(username: string): Observable<boolean>;
+    abstract authenticate(email: string, password: string): Observable<User>;
     abstract getUserById(id: number): Observable<User>;
     abstract sendEmailVerification(email: string): Observable<void>;
     abstract getAllUsers(): Observable<User[]>;

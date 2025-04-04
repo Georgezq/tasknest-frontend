@@ -17,6 +17,10 @@ export class UserRepositoryImpl implements UserRepository{
      return this.userService.getUsers();   
     }
 
+    authenticate(email: string, password: string): Observable<User> {
+        return this.userService.authenticate(email, password);
+    }
+
     thisEmailExists(email: string): Observable<boolean> {
         return this.userService.thisEmailExists(email);
     }
