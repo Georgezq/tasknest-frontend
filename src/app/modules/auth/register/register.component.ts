@@ -38,7 +38,14 @@ export class RegisterComponent implements OnInit{
         }, 1000);
         
         this.userRepository.sendEmailVerification(email).subscribe({
-         
+         next: () => {
+          this.loading = false;
+          this.messageService.showMesages('success', 'Correo enviado', 'Por favor revise su correo para continuar con el registro', 2000);
+         },
+          error: () => {
+            this.loading = false;
+            this.messageService.showMesages('error', 'Ocurrió un error al enviar el correo', '', 2000);
+          }
         });
       },
       error: () => {

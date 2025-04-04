@@ -42,7 +42,7 @@ export class UserService {
   }
 
   sendEmailVerification(email: string): Observable<void> {
-    return this.http.get<void>(`${this.apiUrl}/email`, { params: {email} });  
+    return this.http.post<void>(`${this.apiUrl}/send-email-verification/${email}`, {});  
   }
   
 
