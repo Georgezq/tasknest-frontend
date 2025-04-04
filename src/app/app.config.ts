@@ -21,7 +21,11 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     providePrimeNG({
-    theme: { preset: MyPreset },
+    theme: { preset: MyPreset,
+      options: {
+        darkModeSelector: '.my-app-dark',
+      }
+     },
     }),
 
     { provide: UserRepository, useClass: UserRepositoryImpl },
