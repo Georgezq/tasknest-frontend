@@ -33,6 +33,13 @@ span{
     font-weight: 600;
 }
 
+label{
+    color: var(--ligh-text);
+    font-size: 14px;
+    text-align: start;   
+    font-weight: 600;
+}
+
 
 
 .light-text{
@@ -51,6 +58,15 @@ button:hover {
     cursor: pointer;
     filter: contrast(.9);
 }
+
+.text-form-completed{
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+
 
 .p-progressspinner-circle{
     animation: geek 1s ease-in-out infinite !important; 
