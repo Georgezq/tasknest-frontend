@@ -1,7 +1,8 @@
+import { UserRepository } from '@/app/core/repositories/user.repository';
 import { MessageAlertService } from '@/app/shared/services/messageAlert.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
@@ -20,7 +21,7 @@ import { ToastModule } from 'primeng/toast';
       <h5>Dirección de correo electrónico verificada</h5>
     </div>
     <div class="card-body m-auto mt-4">
-      <form [formGroup]="formGroup" class="flex flex-column gap-3 w-full">
+      <form [formGroup]="formGroup" class="flex flex-column gap-3 w-full" (ngSubmit)="register()">
         
       <label for="email">Dirección de correo electrónico</label>
       <input type="text" name="email" id="email" class="text-form-completed" formControlName="email" value="text@gmail.com">
@@ -31,7 +32,7 @@ import { ToastModule } from 'primeng/toast';
           type="name"
           pInputText
           formControlName="name"
-          placeholder="Introduce tu correo electrónico"
+          placeholder="Introduce tu Nombre"
         />
 
     
@@ -45,11 +46,8 @@ import { ToastModule } from 'primeng/toast';
           [inputStyle]="{ width: '100%' }"
 
         />
-        
-
-     
-
-        <button class=" border-round-sm border-0 border-none bg-primary" >
+      
+        <button class=" border-round-sm border-0 border-none bg-primary">
          @if (!loading) {
           Continuar
          } @else {
@@ -80,17 +78,34 @@ import { ToastModule } from 'primeng/toast';
 })
 export class RegisterVerificationComponent implements OnInit{ 
   formGroup: FormGroup = new FormGroup({});
+  emailParams: string | null = 'test@example.com' ;
 
   loading: boolean = false;
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private router: ActivatedRoute, private userRepository: UserRepository){}
 
   ngOnInit(): void {
-      this.formGroup = this.fb.group({
-        email: ['text@gmail.com'],
+    this.router.queryParamMap.subscribe(params => {
+      this.emailParams = params.get('email');
+    });
+    
+    this.formGroup = this.fb.group({
+        email: [this.emailParams, Validators.required],
         name: [''],
         password: ['']
       })
+  }
+
+  register(){
+
+    this.userRepository.createUser(this.formGroup.value).subscribe({
+      next: () => {
+        console.log('creado');
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    })
   }
 
 

@@ -55,7 +55,7 @@ export class UserService {
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<UserDTO>(this.apiUrl, UserMapper.toDTO(user)).pipe(map(UserMapper.toDomain));
+    return this.http.post<UserDTO>(`${this.apiUrl}/create`, UserMapper.toDTO(user)).pipe(map(UserMapper.toDomain));
   }
 
   updateUser(user: User): Observable<User> {

@@ -72,9 +72,9 @@ export class LoginComponent implements OnInit {
     this.loading = false;
     this.loading = true;
     this.userRepository.authenticate(email, password).subscribe({
-      next: () => {
+      next: (response) => {
         setTimeout(() => {
-          // console.log(response);
+          console.log(response);
           this.loading = false;
         }, 1000);
       },
