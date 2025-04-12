@@ -27,13 +27,6 @@ export class LoginComponent implements OnInit {
       email: [''],
       password: ['']
     });
-
-    // this.userRepository.getAllUsers().subscribe(data => {
-    //   this.users = data;
-    //   console.log(this.users);
-      
-    // })
-  
   }
 
   buttonConfig() {
